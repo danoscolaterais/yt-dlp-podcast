@@ -41,7 +41,7 @@
 
 logDate=$(date +%Y%m%d)
 feedDate=$(date +%Y%m%d -d "-1 month")
-path="/var/www/YTDL"
+path="/var/www/YTDLP"
 
 # Update youtube-dl
 youtube-dl -U
