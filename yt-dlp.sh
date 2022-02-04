@@ -43,11 +43,11 @@ logDate=$(date +%Y%m%d)
 feedDate=$(date +%Y%m%d -d "-1 month")
 path="/var/www/YTDLP"
 
-# Update youtube-dl
-youtube-dl -U
+# Update yt-dlp
+yt-dlp -U
 
 # Download and convert files
-youtube-dl --playlist-reverse --o "$path/data/%(id)s.%(ext)s" --download-archive "$path/downloaded.txt" --no-overwrites -f 'bestaudio[ext=m4a]' --write-description --write-info-json --write-thumbnail --dateafter $feedDate -a "$path/channels.txt" -v >> "$path/data/log-$logDate.log"
+yt-dlp --playlist-reverse --o "$path/data/%(id)s.%(ext)s" --download-archive "$path/downloaded.txt" --no-overwrites -f 'bestaudio[ext=m4a]' --write-description --write-info-json --write-thumbnail --dateafter $feedDate -a "$path/channels.txt" -v >> "$path/data/log-$logDate.log"
 
 # Remove files older than 60 days
 find $path/data/ -mtime +60 -type f -delete >> "$path/data/log-$logDate.log"
