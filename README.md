@@ -1,13 +1,13 @@
-# youtube-dl-podcast
+# yt-dlp-podcast
 Scrape audio from youtube and serve as a podcast.
-This uses [youtube-dl](https://github.com/rg3/youtube-dl) to the hard work.  The result is then served as a podcast.
+This uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) to the hard work.  The result is then served as a podcast.
 
 ## Setup
 A subdirectory caled **data** needs to be created with write permission for the user that will run the shell script.
 
 The following files coordinate the downloading of audio
-* **youtube-dl.sh (linux) /  youtube-dl.ps1 (windows)**
-  * This needs to be scheduled to run with cron/task manager every 24hrs.
+* **yt-dlp.sh (linux)**
+  * This needs to be scheduled to run with cron every 24hrs.
   * Line 44/43 of this file will need to be changed to your path.
   * Initially 1 month of files will be downloaded - this can be changed on line 43/42.
   * Files will be kept for 60 days - this can be changed on line 53/56
