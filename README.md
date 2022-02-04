@@ -1,6 +1,7 @@
 # yt-dlp-podcast
 Scrape audio from youtube and serve as a podcast.
-This uses [yt-dlp](https://github.com/yt-dlp/yt-dlp) to the hard work.  The result is then served as a podcast.
+This uses [yt-dlp] (https://github.com/yt-dlp/yt-dlp) to the hard work.  The result is then served as a podcast.
+Forked from alnixon (https://github.com/alnixon/youtube-dl-podcast)
 
 ## Setup
 A subdirectory caled **data** needs to be created with write permission for the user that will run the shell script.
