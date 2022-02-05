@@ -32,7 +32,7 @@ $pubDate = date("D, d M Y H:i:s G", filemtime($m4afile));
 if (!file_exists('data/' . $json_a['id'] . ".m4a")) {
 	continue;
 } else {
-	if (!file_exists('data/' . $json_a['id'] . ".jpg")) {
+	if (file_exists('data/' . $json_a['id'] . ".jpg")) {
 	   	$image = $baseUrl . 'data/' . $json_a['id'] . ".jpg";
 	} else {
 	   	$image = $baseUrl . 'data/' . $json_a['id'] . ".webp";
