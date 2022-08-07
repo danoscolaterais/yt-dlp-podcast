@@ -27,7 +27,7 @@ $json_a = json_decode($filecontents, true);
 $link = $baseUrl . 'data/' . $json_a['id'] . ".m4a";
 $m4afile = 'data/' . $json_a['id'] . ".m4a";
 
-$pubDate = date("D, d M Y H:i:s G", filemtime($m4afile));
+$pubDate = date("D, d M Y H:i:s \G\M\T", filectime($m4afile));
 
 if (!file_exists('data/' . $json_a['id'] . ".m4a")) {
 	continue;
@@ -42,6 +42,7 @@ if (!file_exists('data/' . $json_a['id'] . ".m4a")) {
 	$output .= '<title>' . htmlspecialchars($json_a['channel'] . ' ► ' . $json_a['title']) . '</title>';
 	$output .= '<description>' . htmlspecialchars($json_a['description']) . '</description>';
 	$output .= '<link>' . $link . '</link>';
+	$output .= '<guid>' . $link . '</guid>';
 	$output .= '<enclosure url="' . $link . '" length="' . $json_a['filesize'] . '" type="audio/m4a"/>';
 	$output .= '<pubDate>' . $pubDate . '</pubDate>';
 	$output .= '<itunes:duration>' . $json_a['duration'] . '</itunes:duration>';
